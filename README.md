@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 [![Build Status](https://travis-ci.org/krustypop/rails-boilerplate-bootstrap4.svg?branch=master)](https://travis-ci.org/krustypop/rails-boilerplate-bootstrap4)
 
@@ -48,3 +49,6 @@ rails server
 
 
 That's all Folks !!
+=======
+http://i.imgur.com/erLnz8k.png
+>>>>>>> origin/master
