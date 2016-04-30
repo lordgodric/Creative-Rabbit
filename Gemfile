@@ -60,3 +60,4 @@ group :development do
 end
 
 gem 'bootstrap4_form_builder'
+gem 'devise'
