@@ -10,15 +10,16 @@
   <% @posts.each do |post| %>
     <div class="post">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
               <h4><%= link_to post.title, post %></h4>
               <p><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
               <p>Author</p>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
           <h4>Works</h4>
-          <img src="http://placehold.it/140x100">
-          <img src="http://placehold.it/140x100">
+          <img src="http://placehold.it/100x100">
+          <img src="http://placehold.it/100x100">
+          <img src="http://placehold.it/100x100">
         </div>
         </div>
     </div>

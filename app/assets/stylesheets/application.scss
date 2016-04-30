@@ -3,12 +3,17 @@
 // Homepage style
 @import 'homepage';
 
+nav img {
+  margin-right: 15px;
+}
+
 .post {
   // background-color: red;
 }
 
 footer {
   background-color: #ccc;
+  margin-top: 33px;
   ul {
     list-style: none;
     li {
