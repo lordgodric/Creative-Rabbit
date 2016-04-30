@@ -1,8 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
+<div class="row">
+<h1>Listing Posts </h1>
+<%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline"%>
+<br><br>
+</div>
 
-<table>
+<div class="row marketing ">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="row">
+        <div class="col-lg-8">
+              <h4><%= link_to post.title, post %></h4>
+              <p><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
+              <p>Author</p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Works</h4>
+          <img src="http://placehold.it/140x100">
+          <img src="http://placehold.it/140x100">
+        </div>
+        </div>
+    </div>
+    <hr>
+  <% end %>
+</div>
+
+
+<!-- <div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-xs-6 col-lg-4">
+      <h3><%= post.title %></h3>
+      <p><%= post.content.match(/^.{0,300}\b/)[0] %></p>
+      <%= link_to 'Show', post, :class=>"btn btn-info-outline", :style=>"font-size: 12px;"%>
+      <%= link_to 'Edit', edit_post_path(post), :class=>"btn btn-info-outline", :style=>"font-size: 12px;" %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
+    </div>
+  <% end %>
+</div> -->
+
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -22,8 +59,4 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline"%>
+</table> -->
