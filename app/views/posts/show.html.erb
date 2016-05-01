@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<div class="post">
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
 
-<p>
+<p class="content">
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
@@ -14,6 +14,6 @@
   <strong>Customer:</strong>
   <%= @post.customer.name %>
 </p>
-
+</div>
 <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %> |
 <%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>

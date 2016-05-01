@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg-7">
               <h4><%= link_to post.title, post %></h4>
-              <p><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
+              <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
               <div class="row">
                 <div class="col-lg-6">
                   <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
