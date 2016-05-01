@@ -10,5 +10,10 @@
   <%= @post.content %>
 </p>
 
+<p>
+  <strong>Customer:</strong>
+  <%= @post.customer.email %>
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %> |
 <%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>

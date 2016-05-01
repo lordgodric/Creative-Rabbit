@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :customers
   resources :posts
+  
+  devise_for :customers
   resources :homepage
   root 'homepage#index'
 
