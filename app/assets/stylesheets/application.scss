@@ -3,25 +3,42 @@
 // Homepage style
 @import 'homepage';
 
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.alert, .notice {
+  margin: 0 auto;
+  text-align: center;
+  color: #66D37E;
+  content: " ";
+}
+
+
+.post h4 {
+  font-weight: bold;
+  color: #000;
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 .field label {
   text-align: right;
 }
 
 nav img {
   margin-right: 15px;
+  // margin-left: -25px;
 }
 
 footer {
-  background-color: #ccc;
+  background-color: #eee;
   margin-top: 33px;
-  ul {
-    list-style: none;
-    li {
-      display: inline-block;
 
-      a {
-        color: #000;
-      }
-    }
+  .social-area, .copyright {
+    text-align: center;
+    margin: 10px 0;
   }
 }

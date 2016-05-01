@@ -1,4 +1,5 @@
-<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #eee; border-bottom: 1px solid #ccc;">
+  <div class="container">
   <ul class="nav navbar-nav">
     <a href="homepage#index">
     <%= image_tag("my-ruby-rabbit.png", size: "33x33", alt: "Edit Entry", class: "pull-left") %>
@@ -15,12 +16,18 @@
     </li>
 
       <% if customer_signed_in? %>
-      <li class="nav-item pull-xs-right">
-          <span  class='nav-link'>Hello, <%= current_customer.email %></span>
-      </li>
+
+
       <li class="nav-item pull-xs-right">
           <%= link_to 'Exit', destroy_customer_session_path, :method => :delete, class: 'nav-link' %>
       </li>
+      <li class="nav-item pull-xs-right">
+          <span  class='nav-link'><%= current_customer.email %></span>
+      </li>
+      <li class="nav-item pull-xs-right">
+        <span  class='nav-link'><%= current_customer.name %></span>
+      </li>
+
       <% else %>
       <li class="nav-item pull-xs-right">
         <%= link_to 'Sign in', new_customer_session_path, class: 'nav-link' %>
@@ -31,5 +38,5 @@
       <% end %>
     </li>
   </ul>
-
+</div>
 </nav>

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice" class"notice"><%= notice %></p> -->
 
 <div class="row">
 <h1>Listing Posts </h1>
@@ -13,13 +13,24 @@
         <div class="col-lg-7">
               <h4><%= link_to post.title, post %></h4>
               <p><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
-              <p><%= link_to post.customer.name, post.customer.name %></p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+                </div>
+                <div class="col-lg-6">
+                  <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
+                </div>
+              </div>
+
         </div>
         <div class="col-lg-5">
           <h4>Works</h4>
           <img src="http://placehold.it/100x100">
           <img src="http://placehold.it/100x100">
           <img src="http://placehold.it/100x100">
+          <img src="http://placehold.it/100x100">
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
         </div>
         </div>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
