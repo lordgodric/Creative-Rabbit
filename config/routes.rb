@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
-  
-  devise_for :customers
   resources :homepage
+  resources :posts
+  devise_for :customers
   root 'homepage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
