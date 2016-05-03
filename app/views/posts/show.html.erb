@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 <div class="post">
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p class="content">
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>Customer:</strong>
-  <%= @post.customer.name %>
-</p>
+    <p>
+        <strong>Title:</strong>
+        <%= @post.title %>
+    </p>
+    <p class="content">
+        <strong>Content:</strong>
+        <%= @post.content %>
+    </p>
+    <p>
+        <strong>Customer:</strong>
+        <%= @post.customer.name %>
+    </p>
+</div>
+<div class="artworks">
+    <div class="card col-lg-3">
+    <img src="http://placehold.it/250x250" class="">
+    <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+    </div>
+    </div>
 </div>
 <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %> |
 <%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>
