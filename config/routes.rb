@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :designers
   resources :homepage
   resources :posts
   devise_for :customers

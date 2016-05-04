@@ -5,6 +5,7 @@
     <%= image_tag("my-ruby-rabbit.png", size: "33x33", alt: "Edit Entry", class: "pull-left") %>
     </a>
     <li class="nav-item ">
+      <span>
       <%= link_to 'Home', '/homepage#index', class: 'nav-link' %>
     </li>
     <li class="nav-item">
@@ -15,28 +16,31 @@
       <a class="nav-link" href="#">Contact</a>
     </li>
 
+
+      <!-- Якщо Customer ввійшов -->
       <% if customer_signed_in? %>
-
-
-      <li class="nav-item pull-xs-right">
-          <%= link_to 'Exit', destroy_customer_session_path, :method => :delete, class: 'nav-link' %>
-      </li>
-      <li class="nav-item pull-xs-right">
-          <span  class='nav-link'><%= current_customer.email %></span>
-      </li>
-      <li class="nav-item pull-xs-right">
-        <span  class='nav-link'><%= current_customer.name %></span>
-      </li>
-
-      <% else %>
-      <li class="nav-item pull-xs-right">
-        <%= link_to 'Sign in', new_customer_session_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item pull-xs-right">
-        <%= link_to 'Sign up', new_customer_registration_path, class: 'nav-link' %>
-      </li>
+          <li class="nav-item pull-xs-right">
+              <%= link_to 'Exit', destroy_customer_session_path, :method => :delete, class: 'nav-link' %>
+          </li>
+          <li class="nav-item pull-xs-right">
+              <span  class='nav-link'><%= current_customer.email %></span>
+          </li>
+          <li class="nav-item pull-xs-right">
+            <span  class='nav-link'><%= current_customer.name %></span>
+          </li>
+          <!-- Якщо Customer не ввійшов -->
+          <% else %>
+          <li class="nav-item pull-xs-right">
+            <%= link_to 'Customer', new_customer_session_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item pull-xs-right">
+            <%= link_to 'Designer', new_designer_session_path, class: 'nav-link' %>
+          </li>
       <% end %>
-    </li>
+
+
+
+
   </ul>
 </div>
 </nav>
