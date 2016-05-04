@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="post row">
+<div class="post">
     <p>
         <strong>Title:</strong>
         <%= @post.title %>
@@ -13,22 +13,15 @@
         <%= @post.customer.name %>
     </p>
 </div>
-<div class="row">
+<div class="artworks">
+    <div class="card col-lg-3">
+    <img src="http://placehold.it/250x250" class="">
+    <div class="card-block">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Button</a>
+    </div>
+    </div>
+</div>
 <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %> |
-<%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %> |
-<%= link_to 'Add Logo', new_logo_path, :class=>"btn btn-info-outline" %>
-<hr>
-</div>
-
-<div class="row">
-  <div class="artworks">
-      <div class="card col-lg-3">
-      <img src="http://placehold.it/250x250" class="">
-      <div class="card-block">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Button</a>
-      </div>
-      </div>
-  </div>
-</div>
+<%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>
