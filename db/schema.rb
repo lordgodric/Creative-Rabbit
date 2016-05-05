@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504113712) do
+ActiveRecord::Schema.define(version: 20160505103956) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -53,9 +53,13 @@ ActiveRecord::Schema.define(version: 20160504113712) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "customer_id"
+    t.string   "old_logo_file_name"
+    t.string   "old_logo_content_type"
+    t.integer  "old_logo_file_size"
+    t.datetime "old_logo_updated_at"
   end
 
 end
