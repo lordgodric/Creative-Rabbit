@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Logos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Designer</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logos.each do |logo| %>
+      <tr>
+        <td><%= logo.post_id %></td>
+        <td><%= logo.designer_id %></td>
+        <td><%= logo.title %></td>
+        <td><%= link_to 'Show', logo %></td>
+        <td><%= link_to 'Edit', edit_logo_path(logo) %></td>
+        <td><%= link_to 'Destroy', logo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Logo', new_logo_path %>

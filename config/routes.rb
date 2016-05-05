@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :logos
   devise_for :designers
   resources :homepage
   resources :posts
