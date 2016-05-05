@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
   <div class="row">
-    <div class="post col-lg-8">
+    <div class="post col-lg-9">
         <h4>
             <%= @post.title %>
         </h4>
@@ -15,8 +15,10 @@
             <%= @post.created_at.strftime("%d %b %Y")  %>
 
         </p>
+        <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %>
+        <%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>
     </div>
-    <div class="old_logo col-lg-4">
+    <div class="old_logo col-lg-3">
         <div class="">
           <h4 class="">
               Old logo
@@ -25,9 +27,7 @@
         </div>
     </div>
     </div>
+
     <hr>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %> |
-<%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>
