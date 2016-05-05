@@ -2,10 +2,12 @@
 <div class="container">
 
 <div class="row">
-<h1><i class="fa fa-list" aria-hidden="true"></i> Listing Posts </h1>
-<%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline"%>
+
+<i class="fa fa-list " aria-hidden="true"></i> Listing Posts
+<%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline pull-right "%>
 <br><br>
 </div>
+
 
 <div class="row marketing ">
   <% @posts.each do |post| %>
@@ -23,54 +25,32 @@
                 </div>
               </div>
         </div>
-        <div class="col-lg-5">
-          <h4>Works</h4>
-          <img src="http://placehold.it/100x100">
-          <img src="http://placehold.it/100x100">
-          <img src="http://placehold.it/100x100">
-          <img src="http://placehold.it/100x100">
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <div class="col-lg-5 preview-image">
 
+          <div class="preview container-f">
+            <div class="row">
+              <span class="col-lg-3">
+                <h5>Old</h5>
+                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
+              </span>
+              <span class="col-lg-3">
+                <h5>New</h5>
+                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
+              </span>
+              <span class="col-lg-3">
+                <h5>&nbsp;</h5>
+                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
+              </span>
+              <span class="col-lg-3">
+                <h5>&nbsp;</h5>
+                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
+              </span>
+            </div>
+          </div>
         </div>
         </div>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
     </div>
     <hr>
   <% end %>
 </div>
-
 </div>
-
-<!-- <div class="row">
-  <% @posts.each do |post| %>
-    <div class="col-xs-6 col-lg-4">
-      <h3><%= post.title %></h3>
-      <p><%= post.content.match(/^.{0,300}\b/)[0] %></p>
-      <%= link_to 'Show', post, :class=>"btn btn-info-outline", :style=>"font-size: 12px;"%>
-      <%= link_to 'Edit', edit_post_path(post), :class=>"btn btn-info-outline", :style=>"font-size: 12px;" %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
-    </div>
-  <% end %>
-</div> -->
-
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post, :class=>"btn btn-info-outline"%></td>
-        <td><%= link_to 'Edit', edit_post_path(post), :class=>"btn btn-info-outline" %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
