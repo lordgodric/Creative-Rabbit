@@ -61,3 +61,4 @@ end
 
 gem 'bootstrap4_form_builder'
 gem 'devise'
+gem "paperclip", "~> 5.0.0.beta1"

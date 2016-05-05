@@ -19,7 +19,7 @@
         <% if designer_signed_in? %>
           <!-- Exit -->
           <li class="nav-item pull-xs-right">
-              <%= link_to 'Exit', destroy_designer_session_path, :method => :delete, class: 'nav-link' %>
+              <%= link_to 'Exit <i class="fa fa-sign-out" aria-hidden="true"></i> '.html_safe, destroy_designer_session_path, :method => :delete, class: 'nav-link' %>
           </li>
           <!-- Email -->
           <li class="nav-item pull-xs-right">
@@ -29,9 +29,10 @@
         <% end %>
 
         <% if customer_signed_in? %>
+
           <!-- Exit -->
           <li class="nav-item pull-xs-right">
-              <%= link_to 'Exit', destroy_customer_session_path, :method => :delete, class: 'nav-link' %>
+              <%= link_to 'Exit <i class="fa fa-sign-out" aria-hidden="true"></i> '.html_safe, destroy_designer_session_path, :method => :delete, class: 'nav-link' %>
           </li>
           <!-- Email -->
           <li class="nav-item pull-xs-right">
@@ -46,11 +47,11 @@
         <% if !signed_in? %>
           <!-- Customer -->
           <li class="nav-item pull-xs-right">
-            <%= link_to 'Customer', new_customer_session_path, class: 'nav-link' %>
+            <%= link_to 'Customer <i class="fa fa-briefcase" aria-hidden="true"></i>'.html_safe, new_customer_session_path, class: 'nav-link' %>
           </li>
           <!-- Designer -->
           <li class="nav-item pull-xs-right">
-            <%= link_to 'Designer', new_designer_session_path, class: 'nav-link' %>
+            <%= link_to 'Designer <i class="fa fa-leaf" aria-hidden="true"></i>'.html_safe, new_designer_session_path, class: 'nav-link' %>
           </li>
         <% end %>
 
