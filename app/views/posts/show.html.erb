@@ -8,6 +8,11 @@
           <p class="content">
               <%= @post.content %>
           </p>
+          <% @post.logos.each do |logo| %>
+            <tr>
+              <td><%= logo.title %></td>
+            <tr>
+           <% end %>
           <p>
               <span>By </span>
               <%= link_to @post.customer.name, @post.customer.name, class: "author" %>
