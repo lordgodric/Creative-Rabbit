@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505124450) do
+ActiveRecord::Schema.define(version: 20160522221351) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -54,8 +54,12 @@ ActiveRecord::Schema.define(version: 20160505124450) do
     t.integer  "post_id"
     t.integer  "designer_id"
     t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "new_logo_file_name"
+    t.string   "new_logo_content_type"
+    t.integer  "new_logo_file_size"
+    t.datetime "new_logo_updated_at"
   end
 
   create_table "posts", force: :cascade do |t|

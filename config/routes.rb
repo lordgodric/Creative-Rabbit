@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :homepage
   resources :posts
   devise_for :customers
+#   resources :articles do
+#   resources :comments
+# end
   root 'homepage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

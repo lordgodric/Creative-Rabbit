@@ -1,4 +1,4 @@
-<%= form_for(@logo) do |f| %>
+<%= bootstrap_form_for @logo, url: logos_path, html: { multipart: true } do |f| %>
   <% if @logo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@logo.errors.count, "error") %> prohibited this logo from being saved:</h2>
@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :post_id %><br>
     <%= f.number_field :post_id %>
   </div>
   <div class="field">
-    <%= f.label :designer_id %><br>
     <%= f.number_field :designer_id %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.file_field :new_logo %>
   </div>
   <div class="actions">
     <%= f.submit %>
