@@ -8,11 +8,7 @@
           <p class="content">
               <%= @post.content %>
           </p>
-          <% @post.logos.each do |logo| %>
-            <tr>
-              <td><%= logo.title %></td>
-            <tr>
-           <% end %>
+
           <p>
               <span>By </span>
               <%= link_to @post.customer.name, @post.customer.name, class: "author" %>
@@ -36,4 +32,14 @@
     <hr>
     <%= link_to 'Add logo', new_logo_path, :class=>"btn btn-info-outline" %>
   </div>
+  <div class="container">
+    <div class="row">
+      <% @post.logos.each do |logo| %>
+
+        <%= image_tag logo.new_logo.url(:medium) %>
+
+       <% end %>
+    </div>
+  </div>
+
 </div>
