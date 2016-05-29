@@ -13,41 +13,26 @@
   <% @posts.each do |post| %>
     <div class="post">
       <div class="row">
-        <div class="col-lg-7">
-              <h4><%= link_to post.title, post %></h4>
-              <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
-              <div class="row">
-                <div class="col-lg-6">
-                  <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
-                </div>
-                <div class="col-lg-6">
-                  <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
-                </div>
-              </div>
-        </div>
-        <div class="col-lg-5 preview-image">
-
-          <div class="preview container-f">
+        <div class="col-lg-10">
+          <h4><%= link_to post.title, post %></h4>
+          <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
             <div class="row">
-              <span class="col-lg-3">
-                <h5>Old</h5>
-                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
-              </span>
-              <span class="col-lg-3">
-                <h5>New</h5>
-                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
-              </span>
-              <span class="col-lg-3">
-                <h5>&nbsp;</h5>
-                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
-              </span>
-              <span class="col-lg-3">
-                <h5>&nbsp;</h5>
-                <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
-              </span>
+              <div class="col-lg-6">
+                <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+              </div>
+              <div class="col-lg-6">
+                <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="col-lg-1 preview-image">
+
+                <span class="col-lg-3">
+                  <h5>Old</h5>
+                  <div class="row"><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
+                </span>
+
+          </div>
         </div>
     </div>
     <hr>
