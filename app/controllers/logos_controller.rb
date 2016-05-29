@@ -24,7 +24,7 @@ class LogosController < ApplicationController
   # POST /logos
   # POST /logos.json
   def create
-    @logo = Logo.new(logo_params)
+    @logo = current_designer.logos.new(logo_params)
 
     respond_to do |format|
       if @logo.save
