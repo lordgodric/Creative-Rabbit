@@ -20,26 +20,39 @@
           <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
 
       </div>
-      <div class="old_logo col-lg-3">
+      <div class="old_logo col-lg-3 text-center">
           <div class="">
             <h4 class="">
                 Old logo
             </h4>
-            <%= image_tag @post.old_logo.url(:medium), class: "card-img-top" %>
+            <%= image_tag @post.old_logo.url(:medium), class: "card-img-top img-fluid center-block" %>
           </div>
       </div>
     </div>
     <hr>
-    <%= link_to 'Add logo', new_logo_path, :class=>"btn btn-info-outline" %>
+
+      <%= link_to 'Add logo', new_logo_path, :class=>"btn btn-info-outline " %>
+
+  <br><br>
   </div>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row"> -->
+
       <% @post.logos.each do |logo| %>
 
+        <div class="card col-xs-6 col-sm-4 col-md-3">
+          <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid" %>
+          <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
+          <div class="card-block">
+
+          </div>
+        </div>
+       <% end %>
+      <!-- <% @post.logos.each do |logo| %>
         <%= image_tag logo.new_logo.url(:medium) %>
 
-       <% end %>
-    </div>
+       <% end %> -->
+    <!-- </div> -->
   </div>
 
 </div>
