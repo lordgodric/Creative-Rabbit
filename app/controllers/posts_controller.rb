@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.includes(:logos).find(params[:id])
+    @designer = Designer.all
   end
 
   # GET /posts/new
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_customer.posts.new(post_params)
-    
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }

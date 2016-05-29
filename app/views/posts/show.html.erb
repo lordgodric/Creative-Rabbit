@@ -42,9 +42,8 @@
 
         <div class="card col-xs-6 col-sm-4 col-md-3">
           <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid" %>
-          <!-- <img class="card-img-top" data-src="..." alt="Card image cap"> -->
           <div class="card-block">
-
+            <p><%= logo.designer.email %></p>
           </div>
         </div>
        <% end %>
