@@ -1,5 +1,6 @@
 class LogosController < ApplicationController
   before_action :set_logo, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_designer!, :except => [:show, :index]
 
   # GET /logos
   # GET /logos.json
