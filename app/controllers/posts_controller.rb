@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.includes(:logos).find(params[:id])
-    @designer = Designer.all
   end
 
   # GET /posts/new

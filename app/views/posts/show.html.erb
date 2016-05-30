@@ -35,23 +35,30 @@
 
   <br><br>
   </div>
-  <div class="container">
-    <!-- <div class="row"> -->
+  <div class="card-deck-wrapper">
 
-      <% @post.logos.each do |logo| %>
+    <% @post.logos.each do |logo| %>
 
-        <div class="card col-xs-6 col-sm-4 col-md-3">
-          <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid" %>
+      <div class="card-deck col-xs-6 col-sm-4 col-lg-3">
+        <div class="card ">
+          <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid center-block "  %>
+
+
           <div class="card-block">
-            <p><%= logo.designer.email %></p>
+
+            <p class="card-text text-muted"><%= logo.designer.name %>author</p>
+            <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
+            <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span>
+            </div>
           </div>
         </div>
-       <% end %>
-      <!-- <% @post.logos.each do |logo| %>
-        <%= image_tag logo.new_logo.url(:medium) %>
+      </div>
+    <% end %>
 
-       <% end %> -->
-    <!-- </div> -->
   </div>
 
 </div>
+<!-- <% @post.logos.each do |logo| %>
+  <%= image_tag logo.new_logo.url(:medium) %>
+
+ <% end %> -->
