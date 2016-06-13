@@ -7,6 +7,14 @@
   font-family: 'Raleway', sans-serif;
 }
 
+a {
+  color: #4caf50;
+  letter-spacing: 0.5px;
+  &:hover {
+    color: #ccc;
+  }
+}
+
 .alert, .notice {
   margin: 0 auto;
   text-align: center;

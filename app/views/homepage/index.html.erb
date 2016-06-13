@@ -1,12 +1,40 @@
 <div class="container">
-    <div class="row">
-        <div class="starter-template">
-          <%= image_tag("my-ruby-rabbit.png", size: "112x112", alt: "Edit Entry", class: "") %>
-        <h1 class="display-4", style="font-family: 'Caveat Brush', cursive;">Creative Rabbit</h1>
-        <p class="lead text-muted">You ideas - our artwork</p>
-      </div>
-      <div class="best-works row">
-        
-      </div>
-</div>
+  <div class="row">
+    <div class="starter-template">
+      <%= image_tag("my-ruby-rabbit.png", size: "112x112", alt: "Edit Entry", class: "") %>
+    <h1 class="display-4", style="font-family: 'Caveat Brush', cursive;">Creative Rabbit</h1>
+    <p class="lead text-muted">You ideas - our artwork</p>
+    <button type="button" class="try-it btn btn-success-outline btn-lg"><%= link_to 'Try it', '/posts', class: 'nav-link' %></button>
+    </div>
+  </div>
+  <hr>
+  <div class="how-work">
+    <p class="how-it-work">How it work ?</p>
+    <div class="steps">
+      <%= image_tag("post.png", size: "48x48", alt: "post", class: "") %>
+      <p class="step1">The customer describes as should look to have a new logo</p>
+      <%= image_tag("arrowbottom.png", size: "30x30", alt: "arrow", class: "") %>
+      <%= image_tag("design.png", size: "48x48", alt: "design", class: "") %>
+      <p class="step2">The designer does the work</p>
+      <%= image_tag("arrowbottom.png", size: "30x30", alt: "arrow", class: "") %>
+      <%= image_tag("best.png", size: "48x48", alt: "best", class: "") %>
+      <p class="step3">The customer chooses the best work</p>
+    </div>
+  </div>
+  <hr>
+  <div class="comments">
+    <p class="text-center comments-title">Creative Rabbit is made for logo designers like you.</p>
+    <div class="comment col-xs-4">
+      <p class="comment-text">Creative Rabbit is a sine qua non tool for nowadays UI and UX designers.</p>
+      <p class="comment-author">Everaldo Coelho</p>
+    </div>
+    <div class="comment col-xs-4">
+      <p class="comment-text">Creative Rabbit continues to grow and mature fast.</p>
+      <p class="comment-author">Jon Hicks</p>
+    </div>
+    <div class="comment col-xs-4">
+      <p class="comment-text">There is no other tool out there that is so intrinsically connected to the way designers work today.</p>
+      <p class="comment-author">Meng To</p>
+    </div>
+  </div>
 </div><!-- /.container -->
