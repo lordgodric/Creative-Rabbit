@@ -62,3 +62,5 @@ end
 gem 'bootstrap4_form_builder'
 gem 'devise'
 gem "paperclip", "~> 5.0.0.beta1"
+gem 'rails-erd', '~> 1.4', '>= 1.4.7'
+gem 'railroady'
