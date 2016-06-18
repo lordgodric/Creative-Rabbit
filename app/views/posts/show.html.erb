@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
   <div class="container">
-    <div class="row">
+    <div class="row show-post-wrapper">
       <div class="post col-lg-9">
           <h4>
               <%= @post.title %>
@@ -10,10 +10,10 @@
           </p>
 
           <p>
-              <span>By </span>
-              <%= link_to @post.customer.name, @post.customer.name, class: "author" %>
-              <span> at </span>
-              <%= @post.created_at.strftime("%d %b %Y")  %>
+            <span>By </span>
+            <%= link_to @post.customer.name, @post.customer.name, class: "author" %>
+            <span> at </span>
+            <%= @post.created_at.strftime("%d %b %Y")  %>
           </p>
           <% if @post.customer == current_customer %>
             <%= link_to 'Edit', edit_post_path(@post), :class=>"btn btn-info-outline" %>
@@ -29,7 +29,7 @@
             <h4 class="">
                 Old logo
             </h4>
-            <%= image_tag @post.old_logo.url(:medium), class: "card-img-top img-fluid center-block" %>
+            <%= image_tag @post.old_logo.url(:medium), class: "card-img-top img-fluid" %>
           </div>
       </div>
     </div>
@@ -53,7 +53,7 @@
             <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span>
             </div>
             <hr>
-            <p class="card-text text-muted text-center text-author"><%= logo.designer.email %></p>
+            <p class="card-text text-muted text-center text-author"><%= logo.designer.name %></p>
            
           </div>
         </div>

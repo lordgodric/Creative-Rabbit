@@ -1,43 +1,43 @@
 <p id="notice" class"notice"><%= notice %></p>
 <div class="container">
 
-<div class="row">
+  <div class="row">
 
-<i class="fa fa-list " aria-hidden="true"></i> Listing Posts
-  <% if customer_signed_in? %>
-    <%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline pull-right "%>
-  <% end %>
-<br><br>
-</div>
+  <i class="fa fa-list " aria-hidden="true"></i> Listing Posts
+    <% if customer_signed_in? %>
+      <%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline pull-right "%>
+    <% end %>
+  <br><br>
+  </div>
 
 
-<div class="row marketing ">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <div class="row">
-        <div class="col-lg-10">
-          <h4><%= link_to post.title, post %></h4>
-          <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
-            <div class="row">
-              <div class="col-lg-6">
-                <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+  <div class="row marketing ">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="row">
+          <div class="col-lg-10">
+            <h4><%= link_to post.title, post %></h4>
+            <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+                </div>
+                <div class="col-lg-6">
+                  <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
+                </div>
               </div>
-              <div class="col-lg-6">
-                <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
-              </div>
-            </div>
           </div>
           <div class="col-lg-1 preview-image">
 
                 <span class="col-lg-3">
-                  <h5>Old</h5>
+                  <h5 class="">Old</h5>
                   <div class=""><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
                 </span>
 
           </div>
         </div>
-    </div>
-    <hr>
-  <% end %>
-</div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
 </div>
