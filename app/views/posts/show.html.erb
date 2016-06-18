@@ -34,9 +34,9 @@
       </div>
     </div>
     <hr>
-
+    <% if designer_signed_in? %>
       <%= link_to 'Add logo', new_logo_path, :class=>"btn btn-info-outline " %>
-
+    <% end %>
   <br><br>
   </div>
   <div class="card-deck-wrapper">
@@ -49,11 +49,12 @@
 
 
           <div class="card-block">
-
-            <p class="card-text text-muted"><%= logo.designer.name %>author</p>
-            <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
+ <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
             <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span>
             </div>
+            <hr>
+            <p class="card-text text-muted text-center text-author"><%= logo.designer.email %></p>
+           
           </div>
         </div>
       </div>

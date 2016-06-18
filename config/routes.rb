@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'homepage#index'
   resources :logos
   devise_for :designers
   resources :homepage
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
 #   resources :articles do
 #   resources :comments
 # end
-  root 'homepage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

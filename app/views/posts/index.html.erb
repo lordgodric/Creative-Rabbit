@@ -4,7 +4,9 @@
 <div class="row">
 
 <i class="fa fa-list " aria-hidden="true"></i> Listing Posts
-<%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline pull-right "%>
+  <% if customer_signed_in? %>
+    <%= link_to 'New Post', new_post_path, :class=>"btn btn-success-outline pull-right "%>
+  <% end %>
 <br><br>
 </div>
 
