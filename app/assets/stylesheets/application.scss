@@ -8,10 +8,11 @@
 }
 
 a {
-  color: #4caf50;
+  color: #411F2D;
   letter-spacing: 0.5px;
   &:hover {
-    color: #ccc;
+    color: #F88863;
+    text-decoration: none;
   }
 }
 
@@ -99,6 +100,10 @@ footer {
 .card-deck {
   margin-bottom: 20px;
 
+}
+
+.card-block {
+  padding: 5px 10px;
 }
 
 .card {
