@@ -1,2 +1,2 @@
-[alt tag](filesystem:chrome-extension://fdpohaocaechififmbbbbbknoalclacl/temporary/screencapture-localhost-3000-posts-6-1466344078214.png)
+[alt tag](http://image.prntscr.com/image/06c407b272f24a0ca0e9991049bf2a3e.png)
 
