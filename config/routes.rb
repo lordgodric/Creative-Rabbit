@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
   root 'homepage#index'
-  resources :logos
   devise_for :designers
   resources :homepage
-  resources :posts
+  # resources :posts
+  # resources :logos
 
   devise_for :customers
-  # resources :posts do 
-  #   resources :logos
+
+  get "logos", to: 'logos#index', as: :logos
+
+  resources :posts do
+    resources :logos
+  end
+  #   resources :articles do
+  #   resources :comments
   # end
-#   resources :articles do
-#   resources :comments
-# end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
