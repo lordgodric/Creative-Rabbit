@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @logo %> |
-<%= link_to 'Back', logos_path, class: 'btn btn-info-outline ' %>
+<%= link_to 'Show', post_logo_path(@logo, @post) %> |
+<%= link_to 'Back', :back, class: 'btn btn-info-outline ' %>
