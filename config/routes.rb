@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :designers
   resources :homepage
   resources :posts
+
   devise_for :customers
+  # resources :posts do 
+  #   resources :logos
+  # end
 #   resources :articles do
 #   resources :comments
 # end

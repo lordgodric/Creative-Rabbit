@@ -1,7 +1,7 @@
 
 
 <h2>Log in how Designer</h2>
-<div class="col-lg-6">
+<div class="col-xs-6">
   <div class="row">
 
   <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -21,7 +21,7 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", class: 'pull-right' %>
     </div>
   <% end %>
     <%= render "designers/shared/links" %>
