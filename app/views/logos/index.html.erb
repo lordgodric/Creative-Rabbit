@@ -18,14 +18,10 @@
         <td><%= logo.post_id %></td>
         <td><%= logo.designer_id %></td>
         <td><%= logo.title %></td>
-        <td><%= link_to 'Show', logo %></td>
-        <td><%= link_to 'Edit', edit_logo_path(logo) %></td>
-        <td><%= link_to 'Destroy', logo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', post_logo_path(logo, logo.post_id) %></td>
+        <td><%= link_to 'Edit', edit_post_logo_path(logo, logo.post_id) %></td>
+        <td><%= link_to 'Destroy', post_logo_path(logo, logo.post_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Logo', new_logo_path %>
