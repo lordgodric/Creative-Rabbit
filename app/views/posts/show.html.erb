@@ -20,8 +20,8 @@
             <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger-outline", :style=>"font-size: 12px;" %>
           <% end %>
             <%= link_to 'Back', posts_path, :class=>"btn btn-info-outline" %>
-          
-          
+
+
 
       </div>
       <div class="old_logo col-lg-3 text-center">
@@ -35,7 +35,7 @@
     </div>
     <hr>
     <% if designer_signed_in? %>
-      <%= link_to 'Add logo', new_logo_path, :class=>"btn btn-info-outline " %>
+      <%= link_to 'Add logo', new_post_logo_path(@post), :class=>"btn btn-info-outline " %>
     <% end %>
   <br><br>
   </div>
@@ -52,9 +52,9 @@
  <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
             <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span>
             </div>
-            <%= link_to logo.designer.email, new_logo_path, :class=>"text-author" %>
+            <%= link_to logo.designer.email, post_logo_path(@post, logo), :class=>"text-author" %>
             <!-- <p class="card-text text-muted text-center text-author"><%= logo.designer.email %></p> -->
-           
+
           </div>
         </div>
       </div>

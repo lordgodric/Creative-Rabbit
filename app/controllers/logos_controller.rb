@@ -1,75 +1,56 @@
 class LogosController < ApplicationController
-  before_action :set_logo, only: [:show, :edit, :update, :destroy]
+  before_action :load_logo, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_designer!, :except => [:show, :index]
 
-  # GET /logos
-  # GET /logos.json
   def index
     @logos = Logo.all
   end
 
-  # GET /logos/1
-  # GET /logos/1.json
-  def show
-  end
-
-  # GET /logos/new
   def new
+    @post = Post.find(params[:post_id])
     @logo = Logo.new
   end
 
-  # GET /logos/1/edit
   def edit
   end
 
-  # POST /logos
-  # POST /logos.json
+  def show
+  end
+
   def create
-    @logo = current_designer.logos.new(logo_params)
+    @post = Post.find(params[:post_id])
+    @logo = @post.logos.new(logo_params)
+    @logo.designer = current_designer
 
-    respond_to do |format|
-      if @logo.save
-        format.html { redirect_to @logo, notice: 'Logo was successfully created.' }
-        format.json { render :show, status: :created, location: @logo }
-      else
-        format.html { render :new }
-        format.json { render json: @logo.errors, status: :unprocessable_entity }
-      end
+    if @logo.save
+      redirect_to @post, notice: 'Logo was successfully created.'
+    else
+      render :new
     end
   end
 
-  # PATCH/PUT /logos/1
-  # PATCH/PUT /logos/1.json
   def update
-    respond_to do |format|
-      if @logo.update(logo_params)
-        format.html { redirect_to @logo, notice: 'Logo was successfully updated.' }
-        format.json { render :show, status: :ok, location: @logo }
-      else
-        format.html { render :edit }
-        format.json { render json: @logo.errors, status: :unprocessable_entity }
-      end
+    if load_logo.update(logo_params)
+      redirect_to load_logo, notice: 'Logo was successfully updated.'
+    else
+      render :edit
     end
   end
 
-  # DELETE /logos/1
-  # DELETE /logos/1.json
   def destroy
-    @logo.destroy
-    respond_to do |format|
-      format.html { redirect_to logos_url, notice: 'Logo was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    load_logo.destroy
+
+    redirect_to logos_url, notice: 'Logo was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_logo
-      @logo = Logo.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def logo_params
-      params.require(:logo).permit(:post_id, :designer_id, :title, :new_logo, :email, :name)
-    end
+  def load_logo
+    @logo ||= Logo.find(params[:id])
+    @post ||= Post.find(params[:post_id])
+  end
+
+  def logo_params
+    params.require(:logo).permit(:designer_id, :title, :new_logo, :email, :name).merge(post: @post)
+  end
 end
