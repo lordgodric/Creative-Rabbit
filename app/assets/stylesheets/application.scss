@@ -66,7 +66,10 @@ nav img {
   // margin-left: -25px;
 }
 .preview-image {
-  // margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .nav .nav-link{
@@ -100,6 +103,21 @@ footer {
 .card-deck {
   margin-bottom: 20px;
 
+}
+
+// .post-content-wrapper {
+//   display: flex;
+//   justify-contnet: space-between;
+// }
+
+.card-img-top {
+  // min-width: 100px;
+  // height: 100%;
+}
+
+.old-logo {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .card-block {

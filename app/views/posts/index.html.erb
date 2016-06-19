@@ -11,11 +11,11 @@
   </div>
   </div>
 
-  <div class=" marketing ">
+  <div class="marketing ">
     <% @posts.each do |post| %>
       <div class="post">
-        <div class="row">
-          <div class="col-lg-10">
+        <div class="row post-content-wrapper">
+          <div class="col-sm-9">
             <h4><%= link_to post.title, post %></h4>
             <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
               <div class="container">
@@ -29,12 +29,12 @@
               </div>
               </div>
           </div>
-          <div class="col-lg-1 preview-image">
+          <div class="col-sm-3 preview-image">
 
-                <span class="col-lg-3">
                   <h5 class="">Old</h5>
-                  <div class=""><%= image_tag post.old_logo.url(:thumb), class: "card-img-top" %></div>
-                </span>
+                  <div class="old-logo"><%= image_tag post.old_logo.url(:medium), class: "card-img-top" %></div>
+
+                  <p class="text-muted">New: <%= post.logos.count %></p> 
 
           </div>
         </div>
