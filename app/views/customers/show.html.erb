@@ -1,33 +1,36 @@
-<h1><%= @customer.email %></h1>
+<div class="container">
+  <h1><%= @customer.name %></h1>
+  <h5><%= @customer.email %></h5>
 
-<div class="marketing ">
-  <% @posts.each do |post| %>
-    <div class="post">
-      <div class="row post-content-wrapper">
-        <div class="col-sm-9">
-          <h4><%= link_to post.title, post %></h4>
-          <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
-            <div class="container">
-            <div class="row">
-              <div class=" col-xs-6">
-                <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+  <div class="marketing ">
+    <% @posts.each do |post| %>
+      <div class="post">
+        <div class="row post-content-wrapper">
+          <div class="col-sm-9">
+            <h4><%= link_to post.title, post %></h4>
+            <p class="content"><%= post.content.match(/^.{0,300}\b/)[0] %>...</p>
+              <div class="container">
+              <div class="row">
+                <div class=" col-xs-6">
+                  <i class="fa fa-user" aria-hidden="true">&nbsp</i><%= link_to post.customer.name, post.customer.name %>
+                </div>
+                <div class=" col-xs-6">
+                  <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
+                </div>
               </div>
-              <div class=" col-xs-6">
-                <p class="pull-right"><i class="fa fa-clock-o" aria-hidden="true">&nbsp</i><%= post.created_at.strftime("%d %b %Y") %></p>
               </div>
-            </div>
-            </div>
-        </div>
-        <div class="col-sm-3 preview-image">
+          </div>
+          <div class="col-sm-3 preview-image">
 
-                <h5 class="">Old</h5>
-                <div class="old-logo"><%= image_tag post.old_logo.url(:medium), class: "card-img-top" %></div>
+                  <h5 class="">Old</h5>
+                  <div class="old-logo"><%= image_tag post.old_logo.url(:medium), class: "card-img-top" %></div>
 
-                <p class="text-muted">New: <%= post.logos.count %></p>
+                  <p class="text-muted">New: <%= post.logos.count %></p>
 
+          </div>
         </div>
       </div>
-    </div>
-    <hr>
-  <% end %>
+      <hr>
+    <% end %>
+  </div>
 </div>

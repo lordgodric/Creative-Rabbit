@@ -1,8 +1,12 @@
-<i class="fa fa-list " aria-hidden="true"></i> Listing Customers
-<br>
-<% @customers.each do |customer| %>
+<div class="container">
+	<i class="fa fa-list " aria-hidden="true"></i> Listing Customers
+	<br><br>
+	<% @customers.each do |customer| %>
 
-  <%= customer.name %>
-  <%= customer.id %>
-  <%= link_to customer.email, customer_path(customer) %><br/>
-<% end %>
+	  <h5><%= link_to customer.name, customer_path(customer) %></h5>
+	  <span> <%= link_to customer.email, customer_path(customer) %></span><br>
+	  <span> <%=  customer.posts.count %> posts</span>
+	  <br/><br>
+
+	<% end %>
+</div>

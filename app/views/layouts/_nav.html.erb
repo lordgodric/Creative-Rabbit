@@ -55,7 +55,7 @@
           </li>
           <!-- Name -->
           <li class="nav-item pull-xs-right">
-            <span  class='nav-link'><%= current_customer.name %></span>
+            <%= link_to current_customer.name, customer_path(current_customer), class: 'nav-link'  %>
           </li>
         <% end %>
 
