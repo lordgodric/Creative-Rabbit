@@ -1,8 +1,10 @@
 class DesignersController < ApplicationController
-	def index
-	end
+  def index
+    @designers = Designer.all
+  end
 
-	def show
-		@designer = Designer.find(params[:id])
-	end
+  def show
+    @designer = Designer.find(params[:id])
+    @logos = @designer.logos
+  end
 end
