@@ -1,21 +1,38 @@
-<h1><%= @designer.email %></h1>
+<div class="container">
+	<h1><%= @designer.name %></h1>
+	<h5><%= @designer.email %></h5>
+	<br>
 
-<div class="card-deck-wrapper">
+	<div class="card-deck-wrapper">
 
-  <% @logos.each do |logo| %>
+	  <% @logos.each do |logo| %>
 
-  	
-
-    <div class="card-deck col-xs-6 col-sm-4 col-lg-3">
-      <div class="card ">
-        <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid center-block "  %>
-      </div>
-    </div>
-
-    
-    
+	  	
+		
+		<div class="card-deck-wrapper">
 
 
-  <% end %>
+	      <div class="card-deck col-xs-6 col-sm-4 col-lg-3">
+	        <div class="card ">
+	          <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid center-block "  %>
+
+
+	          <div class="card-block">
+	 <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
+	            <% if logo.designer == current_designer %>
+					<span>	<%= link_to 'Destroy', 'destroy', method: :delete, data: { confirm: 'Are you sure?' }, :class=>"", :style=>"font-size: 12px;" %></span>
+				<% end %>
+	            </div>
+	            <%= link_to logo.designer.email, designer_path(logo.designer), :class=>"text-author" %>
+	            
+
+	          </div>
+	        </div>
+	      </div>
+
+	  </div>
+
+	  <% end %>
+	</div>
+
 </div>
-

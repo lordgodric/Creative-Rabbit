@@ -1,12 +1,12 @@
 <div class="container">
 	<i class="fa fa-list " aria-hidden="true"></i> Listing Designers
-	<br>
+	<br><br>
 	<% @designers.each do |designer| %>
 
 	  <h5><%= link_to designer.name, designer_path(designer) %></h5>
 	  <p> <%= link_to designer.email, designer_path(designer) %></p>
-	  <p> <%=  designer.logos.count %></p>
-	  <br/>
+	  <p> <%=  designer.logos.count %> logos</p>
+	  <br>
 	  
 	<% end %>
 </div>
