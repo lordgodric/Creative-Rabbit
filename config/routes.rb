@@ -1,24 +1,21 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :designers
-resources :customers
-resources :logos
-resources :posts
+    resources :customers
+    resources :logos
+    resources :posts
 
     root to: "designers#index"
   end
 
-  get 'designers/index'
-
-
-  root 'homepage#index'
   devise_for :designers
-  resources :homepage
-  # resources :posts
-  # resources :logos
-
   devise_for :customers
+
+  resources :homepage, only: [:index]
+  root 'homepage#index'
+
   resources :designers, only: [:index, :show]
+  resources :customers, only: [:index, :show]
 
   get "logos", to: 'logos#index', as: :logos
 

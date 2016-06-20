@@ -1,0 +1,8 @@
+<i class="fa fa-list " aria-hidden="true"></i> Listing Designers
+<br>
+<% @customers.each do |customer| %>
+
+  <%= customer.name %>
+  <%= customer.id %>
+  <%= link_to customer.email, customer_path(customer) %><br/>
+<% end %>
