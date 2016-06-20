@@ -3,6 +3,7 @@ class Logo < ActiveRecord::Base
   validates_attachment_content_type :new_logo, content_type: /\Aimage\/.*\Z/
   validates :designer_id, presence: true
   validates :post_id, presence: true
+  validates :new_logo, attachment_presence: true
 
 
   belongs_to :post

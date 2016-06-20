@@ -6,16 +6,16 @@
     <p><i class="fa fa-list " aria-hidden="true"></i> Listing Logos</p>
   </div>
 
-    <div class="card-deck-wrapper">
+    <div class="card-deck-wrapper row">
       <% @logos.each do |logo| %>
 
         <div class="card-deck col-xs-6 col-sm-4 col-lg-3">
-          <div class="card ">
+          <div class="card">
             <%= image_tag logo.new_logo.url(:medium), class: "card-img-top img-fluid center-block "  %>
 
             <div class="card-block">
               <div class="details"><span class="card-text"><small class="text-muted"><%= logo.created_at.strftime("%d %b %Y") %></small></span>
-              <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span>
+              <!-- <span class="card-text "><small class="text-muted"><i class="fa fa-heart" aria-hidden="true"></i> 99</small></span> -->
               </div>
               <%= link_to logo.designer.email, designer_path(logo.designer), :class=>"text-author" %>
             </div>
