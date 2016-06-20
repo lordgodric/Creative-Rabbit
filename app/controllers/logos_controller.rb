@@ -3,7 +3,7 @@ class LogosController < ApplicationController
   before_filter :authenticate_designer!, :except => [:show, :index]
 
   def index
-    @logos = Logo.all
+    @logos = Logo.all.order("created_at DESC")
   end
 
   def new

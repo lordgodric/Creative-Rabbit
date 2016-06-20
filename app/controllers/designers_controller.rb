@@ -1,6 +1,6 @@
 class DesignersController < ApplicationController
   def index
-    @designers = Designer.all
+    @designers = Designer.all.order("created_at DESC")
   end
 
   def show
