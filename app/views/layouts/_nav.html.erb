@@ -37,7 +37,7 @@
           </li>
           <!-- Name -->
           <li class="nav-item pull-xs-right">
-            <span  class='nav-link'><%= current_designer.name %></span>
+            <%= link_to current_designer.name, designer_path(current_designer), class: 'nav-link'  %>
           </li>
 
         <% end %>
