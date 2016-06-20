@@ -11,12 +11,12 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'my-ruby-rabbit.png' %>
 </head>
-<body>
+<body class="Site">
 
   <!-- Navigation -->
   <%= render "layouts/nav" %>
 
-  <div class="container">
+  <div class="container site-content">
       <div class="row">
           <!-- Devise flash messages -->
           <p class="notice"><%= notice %></p>
