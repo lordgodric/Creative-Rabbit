@@ -1,0 +1,9 @@
+<i class="fa fa-list " aria-hidden="true"></i> Listing Designers
+<br>
+<% @designers = Designer.all %>
+<% @designers.each do |designer| %>
+
+  <%= designer.name %>
+  <%= designer.id %>
+  <%= link_to designer.email,  'here-link-to-profile-page' %><br/>
+<% end %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'designers/index'
+
+
   root 'homepage#index'
   devise_for :designers
   resources :homepage
@@ -6,6 +9,8 @@ Rails.application.routes.draw do
   # resources :logos
 
   devise_for :customers
+  match '/designers',   to: 'designers#index',   via: 'get'
+  match '/designers/:id',     to: 'designers#show',       via: 'get'
 
   get "logos", to: 'logos#index', as: :logos
 
