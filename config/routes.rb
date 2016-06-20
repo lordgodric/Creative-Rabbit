@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :designers
+resources :customers
+resources :logos
+resources :posts
+
+    root to: "designers#index"
+  end
+
   get 'designers/index'
 
 
