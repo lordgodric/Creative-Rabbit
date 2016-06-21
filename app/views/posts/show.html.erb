@@ -11,7 +11,7 @@
 
           <p>
             <span>By </span>
-            <%= link_to @post.customer.name, @post.customer.name, class: "author" %>
+            <%= link_to current_customer.name, customer_path(current_customer)  %>
             <span> at </span>
             <%= @post.created_at.strftime("%d %b %Y")  %>
           </p>
